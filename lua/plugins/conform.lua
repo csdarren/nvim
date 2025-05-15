@@ -7,18 +7,13 @@ return {
         opts = {
             formatters_by_ft = {
                 lua = { "stylua" },
-                -- Conform will run multiple formatters sequentially
-                python = { "isort", "black" },
-                -- You can customize some of the format options for the filetype (:help conform.format)
-                -- rust = { "rustfmt", lsp_format = "fallback" },
-                -- -- Conform will run the first available formatter
+                python = { "ruff" }, -- Conform will run multiple formatters sequentially
+
+                -- Conform will run the first available formatter
                 -- javascript = { "prettierd", "prettier", stop_after_first = true },
             },
             formatters = {
                 -- this is where you can change specific settings for a formatter. e.g. changing line length to prevent code from switching lines after a certain length
-                black = {
-                    prepend_args = { "--line-length", "150" },
-                },
             },
         },
     },
